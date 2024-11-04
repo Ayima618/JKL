@@ -1,29 +1,9 @@
-/* Reset and Basic Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  color: #333;
-}
-
-/* Logo and Navigation */
 .logo {
+  /* float: right; */
   height: 50px;
   width: 50px;
 }
 
-header {
-  background-color: rgb(61, 61, 58);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
 .navBtn {
   display: inline;
@@ -40,45 +20,51 @@ header {
   text-decoration: none;
   color: rgb(27, 22, 18);
   font-weight: 600;
-  border: 0.5px solid rgb(205, 105, 255);
+  border: 0.5px;
+  border-color: rgb(205, 105, 255);
+  border-style: solid;
 }
 
-/* Section Styles */
-#section1 {
-  background-image: url('/PICTURE/2.jpg');
+header {
+  background-color: rgb(61, 61, 58);
+  padding: 10px;
+}
+
+strong {
+  color: white;
+  margin-left: 7px;
+}
+
+
+
+/* 
+ h0 {
+  background-image: url('/PICTURE/1.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 90vh;
+  height: 100vh;
   margin-top: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#section1Div {
-  position: relative;
-  /* Adjusted for responsiveness */
-  text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  color: rgb(255, 0, 47);
-  font-weight: bold;
-  background-color: aliceblue;
-  padding: 7px;
-  margin: 7px;
-  border-radius: 5px;
+}  */
+
+strong {
+  color: white;
+  margin-left: 5px;
 }
 
-/* Rotating Animation */
 .tinubu {
   position: absolute;
   top: -1700%;
-  left: 700%;
+  left: -730%;
   transform: translate(-50%, -50%);
   height: 200px;
   width: 200px;
+  /* text-align: center; */
   animation: rotate360 5s linear infinite;
+    /* 5 seconds for one full rotation */
 }
 
+/* Keyframes for rotating animation */
 @keyframes rotate360 {
   from {
     transform: rotate(0deg);
@@ -89,46 +75,69 @@ header {
   }
 }
 
-/* Flex Layout for Services */
+/* Logo styling and animation */
+
+
+#section1Div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(255, 0, 47);
+  font-weight: bold;
+  background-color: aliceblue;
+  padding: 7px;
+  margin: 7px;
+  border-radius: 5px;
+}
+
+#section1 {
+  background-image: url('/PICTURE/2.jpg');
+  height: 90vh;
+  margin-top: 15px;
+
+}
+
 #flexLayout {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  /* Improved alignment */
-  padding: 20px;
-  /* Added padding */
+  /* flex-direction:column-reverse; */
+  flex-wrap: wrap-reverse;
+  /* margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px; */
+
 }
+
 
 .item {
-  flex: 1 1 300px;
-  /* Responsive flex item */
+  flex: 1;
   padding: 5px;
-  height: auto;
-  /* Allowing height to adjust based on content */
-  min-width: 250px;
-  /* Ensuring minimum width for smaller screens */
+  height: 300px;
+
 }
 
-/* Grid Layout for Additional Services */
+
 #gridLayout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Responsive grid */
+  grid-template-columns: 4fr 4fr;
   gap: 5px;
 }
 
-/* Footer Styles */
+.gridItem {
+  height: 300px;
+}
+
+
 footer {
   display: flex;
-  flex-wrap: wrap;
   background-color: rgb(204, 204, 204);
-  padding: 20px;
-  /* Added padding */
+  /* text-align: center; */
 }
 
 .footer {
-  flex: 1 1 200px;
-  /* Responsive footer item */
+  flex: 1;
   margin: 20px;
   color: black;
 }
@@ -146,54 +155,18 @@ footer div section {
   text-align: left;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    /* Stacks header items vertically on smaller screens */
-    align-items: center;
-  }
+.bentley {
+  text-decoration: none;
+  color: rgb(27, 22, 18);
 
-  .navBtn {
-    justify-content: center;
-    /* Center nav buttons */
-  }
-
-  #section1 {
-    height: auto;
-    /* Adjust height for smaller screens */
-    padding: 20px;
-  }
-
-  #flexLayout {
-    flex-direction: column;
-    /* Stacks items vertically on smaller screens */
-    align-items: center;
-  }
-
-  .item {
-    flex: 1 1 100%;
-    /* Full width on smaller screens */
-    height: auto;
-    /* Allowing height to adjust */
-  }
 }
 
-@media (max-width: 480px) {
-  .logo {
-    height: 40px;
-    /* Smaller logo size */
-    width: 40px;
-    /* Smaller logo size */
-  }
+#gridLayou {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  gap: 5px;
+}
 
-  header {
-    padding: 5px;
-    /* Reduced header padding */
-  }
-
-  .footer {
-    margin: 10px;
-    /* Reduced footer margin */
-  }
+.gridIte {
+  height: 700px;
 }
